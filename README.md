@@ -2,7 +2,8 @@
 
 chmod +x internet_check.sh
 
-Для добавления задания в cron одной командой вы можете воспользоваться следующей конструкцией:
+echo "$(whoami) ALL=NOPASSWD: /sbin/reboot" | sudo EDITOR='tee -a' visudo
+Для добавления задания в cron одной командой вы можете воспользоваться следующей конструкцией
 
 (crontab -l ; echo "0 */6 * * * /path/to/internet_check.sh") | crontab -
 
