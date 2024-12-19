@@ -1,12 +1,15 @@
 # reload_farm
 
 Файлу необходимо добавить права на исполнение
+
 `chmod +x internet_check.sh`
 
 Желателельно добавить команду reboot для текущего пользователя в доступ без запроса пароля
+
 `echo "$(whoami) ALL=NOPASSWD: /sbin/reboot" | sudo EDITOR='tee -a' visudo`
 
 Для добавления задания в cron одной командой воспользоваться следующей конструкцией
+
 `(crontab -l ; echo "*/30 * * * * /path/to/internet_check.sh") | crontab -`
 
 ### Разбор команды:
